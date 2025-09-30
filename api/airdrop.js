@@ -4,7 +4,7 @@ import { getOrCreateAssociatedTokenAccount, createTransferInstruction, TOKEN_PRO
 // 使用环境变量
 const PRIVATE_KEY = JSON.parse(process.env.WALLET_PRIVATE_KEY);
 const TOKEN_MINT_ADDRESS = process.env.TOKEN_MINT_ADDRESS;
-const RPC_URL = process.env.RPC_URL || 'https://api.mainnet-beta.solana.com';
+const RPC_URL = process.env.RPC_URL || 'https://mainnet.helius-rpc.com/?api-key=f43f61f7-2b5b-471d-b70d-f8de2f1ded98';
 
 const connection = new Connection(RPC_URL, 'confirmed');
 const wallet = Keypair.fromSecretKey(new Uint8Array(PRIVATE_KEY));
@@ -130,4 +130,5 @@ async function createAssociatedTokenAccountInstruction(owner, associatedToken, m
     owner,
     mint
   );
+
 }
