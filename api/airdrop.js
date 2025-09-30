@@ -78,7 +78,7 @@ export default async function handler(req, res) {
     }
 
     // 添加转账指令 (25000个代币，假设代币有6位小数)
-    const transferAmount = 25000 * Math.pow(10, 6); // 根据你的代币小数位数调整
+    const transferAmount = 25000 * Math.pow(10, 9); // 根据你的代币小数位数调整
 
     transaction.add(
       createTransferInstruction(
@@ -132,3 +132,4 @@ async function createAssociatedTokenAccountInstruction(owner, associatedToken, m
   );
 
 }
+
